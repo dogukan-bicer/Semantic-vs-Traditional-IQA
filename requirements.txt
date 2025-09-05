@@ -1,0 +1,38 @@
+# Temel bilimsel / görüntü işleme
+numpy>=1.23
+scipy>=1.8
+pillow>=9.0        # PIL - görüntü yükleme/kaydetme
+scikit-image>=0.19
+
+# Pandas + excel desteği (rapor / tablo için)
+pandas>=1.5
+openpyxl>=3.0
+
+# Görüntü benzerlik / kalite ölçümleri
+tqdm>=4.64          # ilerleme çubukları
+matplotlib>=3.5     # opsiyonel: görselleştirme (plot)
+seaborn>=0.12       # opsiyonel
+
+# Derin öğrenme (PyTorch). CPU veya CUDA sürümüne göre değiştir.
+torch>=2.0
+torchvision>=0.15
+
+# Bazı yaygın/perceptual metric paketleri (opsiyonel / proje bağımlı olabilir)
+lpips>=0.1.4        # Learned Perceptual Image Patch Similarity (eğer kullanıldıysa)
+scikit-learn>=1.1   # opsiyonel (metrik hesapları, clustering)
+
+# OpenCLIP / CLIP tarzı gömüler kullanılıyorsa (projeye bağlı)
+open-clip-torch>=2.0    # (varsa) — bazı projelerde open-clip kullanılır
+
+# Eğer yerel/özgün paketler varsa (ör: DISTS, TRILL, DINOv2) bunlar GitHub veya yerel olarak kurulmalı.
+# Örnek:
+# git+https://github.com/username/DISTS-pytorch.git
+
+# Geliştirme / test
+pytest>=7.0
+black>=23.1           # kod formatlama (opsiyonel)
+
+
+Eğer GPU (CUDA) kullanacaksan torch'u resmi PyTorch yükleme sayfasından (CUDA versiyonuna göre) kur. Örneğin CPU-only için pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu gibi seçenekler vardır — fakat sistemine göre değişir.
+
+Projende DISTS, open_clip veya özel metric paketleri kullanıldıysa (compare_table.py / image_quality.py içine bakarak görebilirsin), bu paketlerin PyPI’de olup olmadığını kontrol et; yoksa git+https://... şeklinde requirements’e ekle veya README’de kurulumu açıkla.
