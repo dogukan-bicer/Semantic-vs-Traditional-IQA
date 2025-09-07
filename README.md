@@ -58,6 +58,8 @@ pip install -r requirements.txt
 
 📊 Usage
 
+---
+
 Run the GUI:
 
 python main.py
@@ -72,6 +74,8 @@ Optionally load a MOS Excel file for correlation analysis
 Save results to CSV or export them to Excel
 
 📦 Dependencies
+
+---
 
 Python 3.9+
 
@@ -93,6 +97,8 @@ OpenPyXL
 
 📖 Example Output
 
+---
+
 GUI Table: Thumbnails of reference & distorted images with similarity scores
 
 Excel Export:
@@ -103,5 +109,8 @@ Sheet 2: Correlation summary (PLCC, RMSE, SROCC, KROCC)
 
 👩‍💻 Authors
 
+---
+
 Developed by Doğukan Biçer
+
 Marmara University, Department of Electrical and Electronics Engineering
