@@ -56,7 +56,7 @@ venv\Scripts\activate      # Windows
 3. Install dependencies
 pip install -r requirements.txt
 
-📊 Usage
+## 📊 Usage
 
 ---
 
@@ -114,3 +114,4 @@ Sheet 2: Correlation summary (PLCC, RMSE, SROCC, KROCC)
 Developed by Doğukan Biçer
 
 Marmara University, Department of Electrical and Electronics Engineering
+
