@@ -1,38 +1,44 @@
-# Temel bilimsel / görüntü işleme
+# Semantic-vs-Traditional-IQA - requirements.txt
+# Last updated: 2025-09-07
+
+# --- Core scientific / image processing ---
 numpy>=1.23
 scipy>=1.8
-pillow>=9.0        # PIL - görüntü yükleme/kaydetme
+Pillow>=9.0
 scikit-image>=0.19
 
-# Pandas + excel desteği (rapor / tablo için)
+# --- Dataframe / Excel support ---
 pandas>=1.5
 openpyxl>=3.0
 
-# Görüntü benzerlik / kalite ölçümleri
-tqdm>=4.64          # ilerleme çubukları
-matplotlib>=3.5     # opsiyonel: görselleştirme (plot)
-seaborn>=0.12       # opsiyonel
+# --- Similarity / quality utilities ---
+tqdm>=4.64
+matplotlib>=3.5    # optional (plots)
+seaborn>=0.12      # optional
 
-# Derin öğrenme (PyTorch). CPU veya CUDA sürümüne göre değiştir.
-torch>=2.0
-torchvision>=0.15
+# --- Deep learning (PyTorch) ---
+# Install the torch build appropriate for your CUDA version (see https://pytorch.org/get-started/locally/)
+torch>=2.0.0
+torchvision>=0.15.0
 
-# Bazı yaygın/perceptual metric paketleri (opsiyonel / proje bağımlı olabilir)
-lpips>=0.1.4        # Learned Perceptual Image Patch Similarity (eğer kullanıldıysa)
-scikit-learn>=1.1   # opsiyonel (metrik hesapları, clustering)
+# --- Perceptual / metric libraries (optional) ---
+lpips>=0.1.4
+scikit-learn>=1.1
 
-# OpenCLIP / CLIP tarzı gömüler kullanılıyorsa (projeye bağlı)
-open-clip-torch>=2.0    # (varsa) — bazı projelerde open-clip kullanılır
+# --- CLIP / OpenCLIP embeddings (if used) ---
+open-clip-torch>=2.0
 
-# Eğer yerel/özgün paketler varsa (ör: DISTS, TRILL, DINOv2) bunlar GitHub veya yerel olarak kurulmalı.
-# Örnek:
-# git+https://github.com/username/DISTS-pytorch.git
-
-# Geliştirme / test
+# --- Dev / testing / formatting ---
 pytest>=7.0
-black>=23.1           # kod formatlama (opsiyonel)
+black>=23.1
 
+# --- Optional research implementations (install from source if needed) ---
+# DINOv2 (Tiny / Large): model code and helpers (weights downloaded separately)
+# pip install git+https://github.com/facebookresearch/dinov2.git@main
 
-Eğer GPU (CUDA) kullanacaksan torch'u resmi PyTorch yükleme sayfasından (CUDA versiyonuna göre) kur. Örneğin CPU-only için pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu gibi seçenekler vardır — fakat sistemine göre değişir.
+# DISTS implementation (if not available on PyPI)
+# pip install git+https://github.com/dingkeyan93/DISTS-pytorch.git
 
-Projende DISTS, open_clip veya özel metric paketleri kullanıldıysa (compare_table.py / image_quality.py içine bakarak görebilirsin), bu paketlerin PyPI’de olup olmadığını kontrol et; yoksa git+https://... şeklinde requirements’e ekle veya README’de kurulumu açıkla.
+# Notes:
+# - For reproducible GPU support, install torch with the wheel matching your CUDA version.
+# - DINOv2 model weights (tiny / large) are typically downloaded from the official repo or Hugging Face; load corresponding checkpoint in code.
