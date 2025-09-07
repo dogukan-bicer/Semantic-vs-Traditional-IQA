@@ -1,1 +1,1 @@
-last results nite-iqa images
+last results NITS‑IQA Database images
